@@ -1,4 +1,5 @@
 # portfolio-website
+
 my personal portfolio website in html,css and js
-# Live link
-https://ramgopalsiddh.github.io/
+
+# [Checkout live website at ramgopal.dev](https://ramgopal.dev)
