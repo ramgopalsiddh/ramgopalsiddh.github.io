@@ -250,6 +250,9 @@ form .btn2{
 nav .fa-solid{
     display: none;
 }
+.copyright-link {
+    color: rgb(32, 136, 177);
+}
 
 /* -----------------------css for small screen------------------------------- */
 @media only screen and (max-width: 600px){
