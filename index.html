@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,200 +8,181 @@
     <title>ramgopal.dev</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1aa96888a3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </head>
+
 <body>
-    <div id="header">
-        <div class="continer">
-            <nav>
-                <h1 class="logo">RAM_GOPAL_SIDDH</h1>
-                <ul id="sidemenu">
-                    <li><a href="#header">HOME</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
+    <div class="container">
+        <div id="header" class="header">
             <div class="header-text">
-                <!-- <p>STUDENT</p> -->
-                <h2>Hi i'm <span>Ram Gopal</span> </h2>
+                <h2>Hi👋 i'm <span>Ram Gopal Siddh</span> </h2>
+                <!-- <p> description </p> -->
             </div>
         </div>
-    </div>
-    <!-- -----------------test project---------------------------- -->
 
-    <div id="projects">
-        <div class="container">
-            <h1 class="sub-title">My Projects</h1>
-            <div class="work-list">
-                <ul class="flex-container wrap">
-                    <li class="flex-item">
-                        <div class="work">
-                            <div class="layer">
-                                <h3>Capstone(Casting Agency)</h3>
-                                <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
-                                <br>
-                                <p>Tech:- HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
-                                <div class="projecticons">
-                                    <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                                    <a href="https://youtu.be/O02NiBLoulo" target="_blank"><i class="fa-solid fa-video"></i></a>
-                                </div>
-                            </div>
-                            <div id="project1" class="modal" onclick="closeImage('project1')">
-                                <span class="close" onclick="closeImage('project1')">&times;</span>
-                                <img class="modal-content" src="" alt="project 1">
-                            </div>
-                            <div class="thumbnails-container">
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 0)">
-                                        <img src="projectimages/capstone/capstone1.png" alt="project 1 thumbnail 0">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 1)">
-                                        <img src="projectimages/capstone/capstone2.png" alt="project 1 thumbnail 1">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 2)">
-                                        <img src="projectimages/capstone/capstone3.png" alt="project 2 thumbnail 2">
-                                    </div>
-                                </div>
-                                <!-- Add more thumbnails as needed -->
-                            </div>
-                        </div>
-                    </li>
-                    <li class="flex-item">
-                        <div class="work">
-                            <div class="layer">
-                                <h3>Capstone(Casting Agency)</h3>
-                                <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
-                                <br>
-                                <p>Tech:- HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
-                                <div class="projecticons">
-                                    <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                                    <a href="https://youtu.be/O02NiBLoulo" target="_blank"><i class="fa-solid fa-video"></i></a>
-                                </div>
-                            </div>
-                            <div id="project1" class="modal" onclick="closeImage('project1')">
-                                <span class="close" onclick="closeImage('project1')">&times;</span>
-                                <img class="modal-content" src="" alt="project 1">
-                            </div>
-                            <div class="thumbnails-container">
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 0)">
-                                        <img src="projectimages/capstone/capstone1.png" alt="project 1 thumbnail 0">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 1)">
-                                        <img src="projectimages/capstone/capstone2.png" alt="project 1 thumbnail 1">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 2)">
-                                        <img src="projectimages/capstone/capstone3.png" alt="project 2 thumbnail 2">
-                                    </div>
-                                </div>
-                                <!-- Add more thumbnails as needed -->
-                            </div>
-                        </div>
-                    </li>
-                    <li class="flex-item">
-                        <div class="work">
-                            <div class="layer">
-                                <h3>Capstone(Casting Agency)</h3>
-                                <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
-                                <br>
-                                <p>Tech:- HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
-                                <div class="projecticons">
-                                    <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                                    <a href="https://youtu.be/O02NiBLoulo" target="_blank"><i class="fa-solid fa-video"></i></a>
-                                </div>
-                            </div>
-                            <div id="project1" class="modal" onclick="closeImage('project1')">
-                                <span class="close" onclick="closeImage('project1')">&times;</span>
-                                <img class="modal-content" src="" alt="project 1">
-                            </div>
-                            <div class="thumbnails-container">
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 0)">
-                                        <img src="projectimages/capstone/capstone1.png" alt="project 1 thumbnail 0">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 1)">
-                                        <img src="projectimages/capstone/capstone2.png" alt="project 1 thumbnail 1">
-                                    </div>
-                                </div>
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail" onclick="showImage('project1', 2)">
-                                        <img src="projectimages/capstone/capstone3.png" alt="project 2 thumbnail 2">
-                                    </div>
-                                </div>
-                                <!-- Add more thumbnails as needed -->
-                            </div>
-                        </div>
-                    </li>
-                    <li class="flex-item">4</li>
-                    <li class="flex-item">5</li>
-                    <li class="flex-item">6</li>
-                </ul>
+        <!-- projects -->
+        <h3 class="sub-title">Projects</h3>
+        <!-- projects flexbox -->
+        <div id="projects" class="projects">
+            <div class="flex-item">
+                <h3>Capstone(Casting Agency)</h3>
+                <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
+                <br>
+                <p>Built With: HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
 
-                <style>
-            .flex-container {
-            align-items: center;
-            padding: 0;
-            margin: 0% 0%;
-            list-style: none;
-            border: 1px solid silver;
-            -ms-box-orient: horizontal;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -moz-flex;
-            display: -webkit-flex;
-            display: flex;
-            justify-content: center;
-            }
-            
-            .wrap { 
-            -webkit-flex-wrap: wrap;
-            align-items: center;
-            flex-wrap: wrap;
-            border: 3px solid black;
-            }  
-            .wrap li {
-            background: rgb(228, 227, 222);
-            /* border: 3px solid black; */
-            }
-            .flex-item {
-            border: 3px solid black;
-            align-items: center;
-            width: 100%;
-            height: 100%px;
-            /* margin: 10px; */
-            width: 450px;
-            /* height: 500px; */
-            /* min-width: 320px;
-            min-height: 500px; */
-            color: rgb(14, 14, 14);
-            /* font-weight: bold; */
-            /* font-size: 18px; */
-            text-align: center;
-            }
-                </style>
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone"
+                    target="_blank">Github Link</a>
+                <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a>
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
+            </div>
+
+
+            <div class="flex-item">
+                <h3>Fyyur</h3>
+                <p>Fyyur is a musical venue and artist booking site that facilitates the discovery and bookings of shows between local performing artists and venues.</p>
+                <br>
+                <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
+
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/project_fyyur"
+                    target="_blank">Github Link</a>
+                <a class="flex-item-link" href="https://youtu.be/LBD0sOBiPLs" target="_blank">Demo Video Link</a>
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
+            </div>
+
+
+            <div class="flex-item">
+                <h3>Trivia</h3>
+                <p>Trivia is a webpage that plays game according to subject and show answer and show result after given answer and show correct answer.</p>
+                <br>
+                <p>Built With: HTML, CSS, JavaScript, React, SQLAlchemy & Python</p>
+
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/trivia"
+                    target="_blank">Github Link</a>
+                <a class="flex-item-link" href="https://youtu.be/NO9CLrjgiTI" target="_blank">Demo Video Link</a>
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
+            </div>
+
+
+            <div class="flex-item">
+                <h3>Coffee shop menu</h3>
+                <p>This webapp creates a menu and has edit & manage access according to employee profile.</p>
+                <br>
+                <p>Built With: HTML, CSS, TypeScript, Auth0, SQLAlchemy & Python</p>
+
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/coffee_shop"
+                    target="_blank">Github Link</a>
+                <!-- <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a> -->
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
+            </div>
+
+
+            <div class="flex-item">
+                <h3>Todo With List</h3>
+                <p>Todo app manages TODO and creates a list according to that has different lists has respective todos.</p>
+                <br>
+                <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
+
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/todoapp"
+                    target="_blank">Github Link</a>
+                <a class="flex-item-link" href="https://youtu.be/FMWkbzpMM1c" target="_blank">Demo Video Link</a>
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
+            </div>
+
+
+            <div class="flex-item">
+                <h3>Friends List(Contacts)</h3>
+                <p>This webapp creates a friends/contact list that contains Name, email, twitter handle & mobile number, and has a login system.</p>
+                <br>
+                <p>Built With: HTML, CSS, JavaScript & Ruby</p>
+
+                <a class="flex-item-link"
+                    href="https://github.com/ramgopalsiddh/friends"
+                    target="_blank">Github Link</a>
+                <!-- <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a> -->
+
+                <div id="project1" class="modal" onclick="closeImage('project1')">
+                    <span class="close" onclick="closeImage('project1')">&times;</span>
+                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+                        alt="project 1 thumbnail 0">
+                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                        alt="project 1 thumbnail 1">
+                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                        alt="project 2 thumbnail 2">
+                </div>
             </div>
         </div>
-    </div>
 
-
-
-
-    <!-------------------------Projects------------------------------------------->
-    <!-- <div id="projects">
+        <!-------------------------Projects------------------------------------------->
+        <!-- <div id="projects">
         <div class="container">
             <h1 class="sub-title">My Projects</h1>
             <div class="work-list">
@@ -299,24 +281,27 @@
         </div>
     </div>
      -->
-<!---------------------------------Contact----------------------------------------->
-    <div id="contact">
-        <div class="continer">
+        <!---------------------------------Contact----------------------------------------->
+        <div id="contact">
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title"> Contact Me</h1>
 
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/ramgopalsiddh/" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                        <a href="https://twitter.com/ramgopalsiddh1/" target="_blank"><i class="fa-brands fa-twitter-square"></i></a>
-                        <a href="mailto:ramgopalsiddh.000@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/ramgopalsiddh/" target="_blank"><i
+                                class="fa-brands fa-github-square"></i></a>
+                        <a href="https://twitter.com/ramgopalsiddh1/" target="_blank"><i
+                                class="fa-brands fa-twitter-square"></i></a>
+                        <a href="mailto:ramgopalsiddh.000@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
                     </div>
 
-                
+
                     <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="btn btn2"> Download CV</a>
 
-                
+
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -329,12 +314,11 @@
                 </div>
             </div>
         </div>
-    </div>
-<!-----------------------------------about------------------------------------------>
-    <div id="about">
-        <div class="continer">
+
+        <!-----------------------------------about------------------------------------------>
+        <div id="about" class="about">
             <div class="row">
-               <!-- <div class="about-col-1">
+                <!-- <div class="about-col-1">
                     <img src="about.jpg">
                 </div> -->
                 <div class="about-col-2">
@@ -349,7 +333,6 @@
                         <ul>
                             <li>Python, SQL, Flask, HTML, CSS, JavaScript, Ruby, C++, C</li>
                             <li>Git, Github, VS Code, Linux, Windows</li>
-                            <!-- <li><span>Python</span></li> -->
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -360,73 +343,75 @@
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li> <span>2019 - 2023</span><br>B.tech student at<a style="text-decoration: none;" href="https://gitjaipur.com/" target="_blank"> GIT Jaipur</a></li>
-                            <li> <span>2018 - 2019</span><br> 12th from Shri Bhartiya Adarsh Vidhyapeeth Sr.Sec.School ,Sardarshahar(RBSE)</li>
-                            <li> <span>2016 - 2017</span><br> 10th from Sanskar children aca.sr.sec.sch.,sardarshar(RBSE) </li>
+                            <li> <span>2019 - 2023</span><br>B.tech student at<a style="text-decoration: none;"
+                                    href="https://gitjaipur.com/" target="_blank"> GIT Jaipur</a></li>
+                            <li> <span>2018 - 2019</span><br> 12th from Shri Bhartiya Adarsh Vidhyapeeth
+                                Sr.Sec.School
+                                ,Sardarshahar(RBSE)</li>
+                            <li> <span>2016 - 2017</span><br> 10th from Sanskar children
+                                aca.sr.sec.sch.,sardarshar(RBSE) </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>Made with <i class="fa-solid fa-heart"></i> By <a class="copyright-link" href="https://twitter.com/ramgopalsiddh1/" target="_blank">RAM GOPAL SIDDH</a></p>
+            <div class="copyright">
+                <p>Made with <i class="fa-solid fa-heart"></i> By <a class="copyright-link"
+                        href="https://twitter.com/ramgopalsiddh1/" target="_blank">RAM GOPAL SIDDH</a></p>
+            </div>
         </div>
     </div>
-<!-----------------------js script------------------------------------------------------->
+
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname){
-            for(tablink of tablinks){
+        function opentab(tabname) {
+            for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
-            for(tabcontent of tabcontents){
+            for (tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-    </script>
-    <!------------------side menu style ---------------------------------->
-    <script>
+
+        // side menu style 
         var sidemenu = document.getElementById("sidemenu");
 
-        function openmenu(){
+        function openmenu() {
             sidemenu.style.right = "0";
         }
-        function closemenu(){
+        function closemenu() {
             sidemenu.style.right = "-200px";
         }
-    </script>
-    <!-----------------google sheet script--------------------------------------->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxp6oWHmjKhZh-7XkPsBmtwQD9vwL2i8UnAd01JZGzpoxfzUy_6uTO3im9_UoFSlKzZNQ/exec'
+
+        // google sheet script
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxp6oWHmjKhZh-7XkPsBmtwQD9vwL2i8UnAd01JZGzpoxfzUy_6uTO3im9_UoFSlKzZNQ/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
-      
+
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
         })
-      </script>
-      <script>
         function showImage(projectId, imageIndex) {
             document.getElementById(projectId).style.display = "flex";
-            document.querySelector(`#${projectId} .modal-content`).src =`projectimages/capstone/capstone${imageIndex + 1}.png`;
+            document.querySelector(`#${projectId}-content`).src = `projectimages/capstone/capstone${imageIndex + 1}.png`;
         }
-
         function closeImage(projectId) {
             document.getElementById(projectId).style.display = "none";
         }
-      </script>
+    </script>
 </body>
+
 </html>
