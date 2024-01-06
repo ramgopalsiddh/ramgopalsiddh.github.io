@@ -8,6 +8,7 @@
     <title>ramgopal.dev</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1aa96888a3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </head>
@@ -21,13 +22,16 @@
             </div>
         </div>
 
-        <!-- projects -->
+        <!-------------------------Projects------------------------------------------->
         <h3 class="sub-title">Projects</h3>
         <!-- projects flexbox -->
         <div id="projects" class="projects">
             <div class="flex-item">
                 <h3>Capstone(Casting Agency)</h3>
-                <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
+                <p>The Casting Agency Project employs Auth0 roles (Casting Assistant, Casting Director, Executive
+                    Producer) and API permissions to optimize movie production workflows, enabling tasks such as
+                    viewing, adding, updating, and deleting actors and movies, showcasing a versatile set of web
+                    development skills.</p>
                 <br>
                 <p>Built With: HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
 
@@ -36,24 +40,33 @@
                     target="_blank">Github Link</a>
                 <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a>
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
+                <!-- comman modal to show full project image -->
+                <div id="project" class="modal" onclick="closeModal()">
+                    <span id="closeButton" class="closeBtn" onclick="closeModal()">&times;</span>
+                    <img id="project-content" class="modal-content" src="" alt="project 1">
                 </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
+
+                <div class="thumbnail-container" data-project-id="project1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone1.png"
                         alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone2.png"
                         alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
-                        alt="project 2 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone3.png"
+                        alt="project 1 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone4.png"
+                        alt="project 1 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone5.png"
+                        alt="project 1 thumbnail 4">
                 </div>
             </div>
 
 
             <div class="flex-item">
-                <h3>Fyyur</h3>
-                <p>Fyyur is a musical venue and artist booking site that facilitates the discovery and bookings of shows between local performing artists and venues.</p>
+                <h3>Fyyur: Connecting Musicians and Venues</h3>
+                <p>Fyyur is a music venue and artist booking platform with defined views and controllers. The project
+                    focuses on connecting artists and venues through a PostgreSQL-backed API, enabling functionalities
+                    like creating, searching, and learning about venues, artists, and shows for enhanced music discovery
+                    and bookings.</p>
                 <br>
                 <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
 
@@ -62,76 +75,89 @@
                     target="_blank">Github Link</a>
                 <a class="flex-item-link" href="https://youtu.be/LBD0sOBiPLs" target="_blank">Demo Video Link</a>
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
+                <div class="thumbnail-container" data-project-id="project2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur1.png"
+                        alt="project 2 thumbnail 0">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur2.png"
+                        alt="project 2 thumbnail 1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur3.png"
                         alt="project 2 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur4.png"
+                        alt="project 2 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur5.png"
+                        alt="project 2 thumbnail 4">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur6.png"
+                        alt="project 2 thumbnail 5">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur7.png"
+                        alt="project 2 thumbnail 6">
                 </div>
             </div>
 
 
             <div class="flex-item">
                 <h3>Trivia</h3>
-                <p>Trivia is a webpage that plays game according to subject and show answer and show result after given answer and show correct answer.</p>
+                <p>Trivia is a web page designed for playing games based on different subjects. It reveals answers,
+                    displays results after user responses, and showcases correct answers. The platform provides an
+                    interactive and engaging experience for users participating in subject-based trivia games</p>
                 <br>
                 <p>Built With: HTML, CSS, JavaScript, React, SQLAlchemy & Python</p>
 
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/trivia"
+                <a class="flex-item-link" href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/trivia"
                     target="_blank">Github Link</a>
                 <a class="flex-item-link" href="https://youtu.be/NO9CLrjgiTI" target="_blank">Demo Video Link</a>
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
-                        alt="project 2 thumbnail 2">
+                <div class="thumbnail-container" data-project-id="project3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia1.png"
+                        alt="project 3 thumbnail 0">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia2.png"
+                        alt="project 3 thumbnail 1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia3.png"
+                        alt="project 3 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia4.png"
+                        alt="project 3 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia5.png"
+                        alt="project 3 thumbnail 4">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia6.png"
+                        alt="project 3 thumbnail 5">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia7.png"
+                        alt="project 3 thumbnail 6">
                 </div>
             </div>
 
 
             <div class="flex-item">
                 <h3>Coffee shop menu</h3>
-                <p>This webapp creates a menu and has edit & manage access according to employee profile.</p>
+                <p>This is for a digitally enabled cafe and needs assistance in setting up a full-stack drink menu
+                    application. The platform should display ingredient ratios through graphics, enable public users to
+                    view drink details, allow baristas to access recipes, and empower managers to create and edit
+                    drinks.</p>
                 <br>
                 <p>Built With: HTML, CSS, TypeScript, Auth0, SQLAlchemy & Python</p>
 
                 <a class="flex-item-link"
                     href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/coffee_shop"
                     target="_blank">Github Link</a>
-                <!-- <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a> -->
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
-                        alt="project 2 thumbnail 2">
+                <div class="thumbnail-container" data-project-id="project4">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee1.png"
+                        alt="project 4 thumbnail 0">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee2.png"
+                        alt="project 4 thumbnail 1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee3.png"
+                        alt="project 4 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee4.png"
+                        alt="project 4 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee5.png"
+                        alt="project 4 thumbnail 4">
                 </div>
             </div>
 
 
             <div class="flex-item">
                 <h3>Todo With List</h3>
-                <p>Todo app manages TODO and creates a list according to that has different lists has respective todos.</p>
+                <p>The Todo app efficiently organizes tasks by creating distinct lists, each containing its respective
+                    todos. Users can manage and prioritize their activities, ensuring a streamlined and organized
+                    approach to task management.</p>
                 <br>
                 <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
 
@@ -140,147 +166,49 @@
                     target="_blank">Github Link</a>
                 <a class="flex-item-link" href="https://youtu.be/FMWkbzpMM1c" target="_blank">Demo Video Link</a>
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
-                        alt="project 2 thumbnail 2">
+                <div class="thumbnail-container" data-project-id="project5">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo1.png"
+                        alt="project 5 thumbnail 0">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo2.png"
+                        alt="project 5 thumbnail 1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo3.png"
+                        alt="project 5 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo4.png"
+                        alt="project 5 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo5.png"
+                        alt="project 5 thumbnail 4">
                 </div>
             </div>
 
 
             <div class="flex-item">
                 <h3>Friends List(Contacts)</h3>
-                <p>This webapp creates a friends/contact list that contains Name, email, twitter handle & mobile number, and has a login system.</p>
+                <p>This web app facilitates the creation of a friends/contact list with Name, email, Twitter handle, and
+                    mobile number details. It includes a secure login system, offering users a convenient way to manage
+                    and connect with their contacts.</p>
                 <br>
                 <p>Built With: HTML, CSS, JavaScript & Ruby</p>
 
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/friends"
-                    target="_blank">Github Link</a>
-                <!-- <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a> -->
+                <a class="flex-item-link" href="https://github.com/ramgopalsiddh/friends" target="_blank">Github
+                    Link</a>
 
-                <div id="project1" class="modal" onclick="closeImage('project1')">
-                    <span class="close" onclick="closeImage('project1')">&times;</span>
-                    <img id="project1-content" class="modal-content" src="" alt="project 1">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" onclick="showImage('project1', 0)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="showImage('project1', 1)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="showImage('project1', 2)" src="projectimages/capstone/capstone3.png"
-                        alt="project 2 thumbnail 2">
+                <div class="thumbnail-container" data-project-id="project6">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends1.png"
+                        alt="project 6 thumbnail 0">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends2.png"
+                        alt="project 6 thumbnail 1">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends3.png"
+                        alt="project 6 thumbnail 2">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends4.png"
+                        alt="project 6 thumbnail 3">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends5.png"
+                        alt="project 6 thumbnail 4">
+                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends6.png"
+                        alt="project 6 thumbnail 5">
                 </div>
             </div>
         </div>
 
-        <!-------------------------Projects------------------------------------------->
-        <!-- <div id="projects">
-        <div class="container">
-            <h1 class="sub-title">My Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <div class="layer">
-                        <h3>Capstone(Casting Agency)</h3>
-                        <p>In this project, the Casting Agency Project models a company that is responsible for creating movies and managing and assigning actors to those movies.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                            <a href="https://youtu.be/O02NiBLoulo" target="_blank"><i class="fa-solid fa-video"></i></a>
-                        </div>
-                    </div>
-                    <div id="project1" class="modal" onclick="closeImage('project1')">
-                        <span class="close" onclick="closeImage('project1')">&times;</span>
-                        <img class="modal-content" src="" alt="project 1">
-                    </div>
-                    <div class="thumbnails-container">
-                        <div class="thumbnail-container">
-                            <div class="thumbnail" onclick="showImage('project1', 0)">
-                                <img src="projectimages/capstone/capstone1.png" alt="project 1 thumbnail 0">
-                            </div>
-                        </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail" onclick="showImage('project1', 1)">
-                                <img src="projectimages/capstone/capstone2.png" alt="project 1 thumbnail 1">
-                            </div>
-                        </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail" onclick="showImage('project1', 2)">
-                                <img src="projectimages/capstone/capstone3.png" alt="project 2 thumbnail 2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="layer">
-                        <h3>Fyyur</h3>
-                        <p>Fyyur is a musical venue and artist booking site that facilitates the discovery and bookings of shows between local performing artists and venues.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, JavaScript, SQLAlchemy & Python</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/blob/main/project_fyyur" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                            <a href="https://youtu.be/LBD0sOBiPLs" target="_blank"><i class="fa-solid fa-video"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="layer">
-                        <h3>Trivia</h3>
-                        <p>Trivia is a webpage that plays a game.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, JavaScript, React, SQLAlchemy & Python</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/blob/main/trivia" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                            <a href="https://youtu.be/NO9CLrjgiTI" target="_blank"><i class="fa-solid fa-video"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="layer">
-                        <h3>Coffee shop menu</h3>
-                        <p>This webapp creates a menu and has edit & manage access according to employee profile.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, TypeScript, Auth0, SQLAlchemy & Python</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/Coffee_shop" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="layer">
-                        <h3>Todo</h3>
-                        <p>Todo app manages TODO and creates a list according to that has different lists has respective todos.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, JavaScript, SQLAlchemy & Python</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/blob/main/todoapp" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                            <a href="https://youtu.be/FMWkbzpMM1c" target="_blank"><i class="fa-solid fa-video"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="layer">
-                        <h3>Friends List</h3>
-                        <p>This webapp creates a friends/contact list that contains Name, email, twitter handle & mobile number, and has a login system.</p>
-                        <br>
-                        <p>Tech:- HTML, CSS, JavaScript & Ruby</p>
-                        <div class="projecticons">
-                            <a href="https://github.com/ramgopalsiddh/friends" target="_blank"><i class="fa-brands fa-github-square"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     -->
         <!---------------------------------Contact----------------------------------------->
         <div id="contact">
             <div class="row">
@@ -404,12 +332,64 @@
                 })
                 .catch(error => console.error('Error!', error.message))
         })
-        function showImage(projectId, imageIndex) {
-            document.getElementById(projectId).style.display = "flex";
-            document.querySelector(`#${projectId}-content`).src = `projectimages/capstone/capstone${imageIndex + 1}.png`;
+
+        var currentProjectId = 0;
+        var currentImageIndex = 0;
+
+        // js to open and close project image modal
+        function getImgSrc(param) {
+            var imgSrc = $(param).attr("src");
+            document.getElementById('project').style.display = "flex";
+            document.getElementById(`project-content`).src = imgSrc;
+
+            // show next and prev button only when modal is open
+            $("#previousButton, #nextButton").show();
+
+            var projectId = $(param).closest(".thumbnail-container").data("project-id");
+            if (projectId != null) {
+                currentProjectId = projectId
+            }
+
+            // Add event listener for arrow key navigation
+            document.addEventListener('keydown', handleKeyPress);
+        };
+
+        function closeModal() {
+            document.getElementById(`project`).style.display = "none";
+            // Remove event listener when closing the modal
+            document.removeEventListener('keydown', handleKeyPress);
         }
-        function closeImage(projectId) {
-            document.getElementById(projectId).style.display = "none";
+
+        function nextSlide() {
+            var thumbnails = $(".thumbnail-container[data-project-id='" + currentProjectId + "'] .thumbnail");
+            currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
+            var imgSrc = thumbnails.eq(currentImageIndex).attr("src");
+            $("#project-content").attr("src", imgSrc);
+        }
+
+        function previousSlide() {
+            var thumbnails = $(".thumbnail-container[data-project-id='" + currentProjectId + "'] .thumbnail");
+
+            currentImageIndex = (currentImageIndex - 1 + thumbnails.length) % thumbnails.length;
+            var imgSrc = thumbnails.eq(currentImageIndex).attr("src");
+            $("#project-content").attr("src", imgSrc);
+        }
+
+        function handleKeyPress(event) {
+            // Handle arrow key presses for navigation
+            switch (event.key) {
+                case 'ArrowLeft':
+                    previousSlide();
+                    break;
+                case 'ArrowRight':
+                    nextSlide();
+                    break;
+                case 'Escape':
+                    closeModal();
+                    break;
+                default:
+                    break;
+            }
         }
     </script>
 </body>
