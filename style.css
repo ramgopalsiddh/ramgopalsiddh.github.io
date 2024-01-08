@@ -123,9 +123,10 @@ h3.sub-title{
     padding: 1%;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    max-width: 42%;
+    max-width: 100%;
     min-width: 340px;
     background-color: #F7EFE5;
+    overflow: hidden;
 }
 
 .flex-item p {
@@ -299,12 +300,15 @@ form .btn2{
     width: 60px;
     height: 50px;
     margin-right: 18px;
+    max-width:  100%;
+    overflow: hidden;
 }
 
 .thumbnail-container {
     display: flex;
     margin-bottom: 15px;
     margin-top: 30px;
+    overflow-x: auto;
 }
 
 .modal {
