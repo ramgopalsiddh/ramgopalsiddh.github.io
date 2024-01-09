@@ -285,6 +285,12 @@ form .btn2{
     #projects{
         padding: 0% 0%;
     }
+    .container {
+        padding: 10px 10px 10px 0px ;
+    }
+    .flex-item{
+        border: 1px solid black;
+    }
 }
 
 #msg {
