@@ -24,13 +24,19 @@ body {
     font-size: 30px;
 }
 
-.header-text h1{
-    font-size: 60px;
+.header-text h2{
+    font-size: 50px;
     margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 .header-text h2 span{
     color: #756AB6;
+}
+
+.header-text p{
+    color: #030303;
+    font-size: 20px;
 }
 
 
@@ -114,6 +120,7 @@ body {
 h3.sub-title{
     margin-bottom: 0px;
     font-size: 50px;
+    margin-top: 80px;
 }
 
 .flex-item {
@@ -255,7 +262,7 @@ form .btn2{
         margin-top: 30px;
         font-size: 16px;
     }
-    .header-text h1 {
+    .header-text h2{
         font-size: 30px;
     }
     
