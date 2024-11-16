@@ -73,6 +73,40 @@ body {
     position: relative;
 }
 
+.tab-title-top {
+    display: flex;
+    margin-bottom: -2%;
+    font-size: 35px;
+}
+
+.tab-links-top {
+    font-weight: bold;
+    text-align: center;
+}
+
+.tab-contents-top ul li {
+    list-style: none;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.tab-contents-top {
+    border-radius: 5px;
+}
+
+
+.tab-contents-top li {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 95%;
+
+}
+
+.tab-contents-top li span {
+    margin-left: auto; 
+}
+
 .tab-links::after {
     content: '';
     width: 0;
@@ -99,10 +133,6 @@ body {
     font-size: 20px;
 }
 
-.tab-contents {
-    display: none;
-}
-
 .tab-contents.active-tab {
     display: block;
 }
@@ -120,7 +150,7 @@ body {
 h3.sub-title{
     margin-bottom: 0px;
     font-size: 50px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .flex-item {
@@ -291,12 +321,14 @@ form .btn2{
     }
     #projects{
         padding: 0% 0%;
+        justify-content: center;
     }
     .container {
         padding: 10px 10px 10px 0px ;
     }
     .flex-item{
         border: 1px solid black;
+        justify-items: center;
     }
 }
 
