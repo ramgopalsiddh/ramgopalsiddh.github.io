@@ -19,7 +19,7 @@
             <div class="header-text">
                 <h2>Hi👋 i'm <span>Ram Gopal Siddh</span> </h2>
                 <p> Full Stack Developer, Building with Python, Flask, Ruby On Rails, React, React-Native, SQL, JavaScript and Beyond </p>
-                <p> Looking for an internship/backend software engineer roles see <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank">My Resume</a></p>
+                <p> Looking for software engineer (Backend) roles see <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank">My Resume</a></p>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
             </div>
             <div >
                 <ul>
-                    <li>Bodhi Labs Software Services pvt ltd <span>Bengaluru, Karnataka, India</span> </li>
+                    <li><a href="https://pongfox.com/" target="_blank" class="company-link"><span class="pongfox-link">PongFox</span> (Bodhi Labs Software Services pvt ltd)</a> <span>Bengaluru, Karnataka, India</span> </li>
                     <li>Software Engineer Intern <span>Sept 2024 - Present</span></li>
                 </ul>
             </div>
@@ -90,8 +90,10 @@
 
                 <!-- comman modal to show full project image -->
                 <div id="project" class="modal" onclick="closeModal()">
-                    <span id="closeButton" class="closeBtn" onclick="closeModal()">&times;</span>
-                    <img id="project-content" class="modal-content" src="" alt="project 1">
+                    <span id="closeButton" class="closeBtn" onclick="closeModal(); event.stopPropagation();">&times;</span>
+                    <button id="previousButton" onclick="previousSlide(); event.stopPropagation();"><i class="fas fa-chevron-left"></i></button>
+                    <img id="project-content" class="modal-content" src="" alt="project 1" onclick="event.stopPropagation();">
+                    <button id="nextButton" onclick="nextSlide(); event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
                 </div>
 
                 <div class="thumbnail-container" data-project-id="project1">
@@ -483,7 +485,7 @@
                     </div>
 
 
-                    <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="btn btn2"> Download CV</a>
+                    <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="btn btn2"> View My Resume</a>
 
 
                 </div>
@@ -522,7 +524,7 @@
             </div> -->
             <div class="copyright">
                 <p>Made with <i class="fa-solid fa-heart"></i> By <a class="copyright-link"
-                        href="https://twitter.com/ramgopalsiddh1/" target="_blank">RAM GOPAL SIDDH</a></p>
+                        href="https://github.com/ramgopalsiddh" target="_blank">RAM GOPAL SIDDH</a></p>
             </div>
         </div>
     </div>

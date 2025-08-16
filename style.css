@@ -268,9 +268,9 @@ form .btn2{
 .copyright{
     width: 100%;
     text-align: center;
-    padding: 25px 0;
+    padding: 10px 0;
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 20px;
 }
 .copyright i{
@@ -368,6 +368,15 @@ img.modal-content {
 
 #sidemenu {
     display: none;
+}
+
+.company-link {
+    text-decoration: none;
+    color: black;
+}
+
+.pongfox-link {
+    color: #756AB6;
 }
 
 /* -----------------------css for small screen------------------------------- */
