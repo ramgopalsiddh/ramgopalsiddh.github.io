@@ -607,7 +607,8 @@
 
         // Pointer Events (work for both touch and mouse)
         modalImageContainer.addEventListener('pointerdown', e => {
-            e.preventDefault(); // Prevent default browser actions
+            // capture the pointer so we still get pointerup even if finger/mouse leaves the element
+            try { modalImageContainer.setPointerCapture && modalImageContainer.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
             startX = e.screenX;
             isMouseDown = true;
             modalImageContainer.style.cursor = 'grabbing';
@@ -618,16 +619,59 @@
                 handleSwipe(e.screenX);
             }
             isMouseDown = false;
+            try { modalImageContainer.releasePointerCapture && modalImageContainer.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
             modalImageContainer.style.cursor = 'default';
         });
 
         modalImageContainer.addEventListener('pointerleave', () => {
             isMouseDown = false;
+            try { /* release if still captured */ modalImageContainer.releasePointerCapture && modalImageContainer.releasePointerCapture(); } catch (err) { /* ignore */ }
             modalImageContainer.style.cursor = 'default';
         });
 
         // Prevent image dragging
         document.getElementById('modal-image').addEventListener('dragstart', e => e.preventDefault());
+
+        // Touch fallback (older mobile browsers / Safari): detect swipe and taps
+        function setupModalTouchGestures() {
+            const container = document.getElementById('modal-image-container');
+            if (!container) return;
+            if (container._touchHandlersAdded) return; // avoid double-binding
+            container._touchHandlersAdded = true;
+
+            let tStartX = 0;
+            let tStartY = 0;
+            let tStartTime = 0;
+            const threshold = 40; // px
+            const restraint = 120; // max vertical displacement
+            const allowedTime = 700; // ms
+
+            container.addEventListener('touchstart', (ev) => {
+                const t = ev.changedTouches[0];
+                tStartX = t.pageX;
+                tStartY = t.pageY;
+                tStartTime = Date.now();
+            }, { passive: true });
+
+            container.addEventListener('touchend', (ev) => {
+                const t = ev.changedTouches[0];
+                const distX = t.pageX - tStartX;
+                const distY = t.pageY - tStartY;
+                const elapsed = Date.now() - tStartTime;
+                if (elapsed <= allowedTime && Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+                    if (distX < 0) changeSlide(1);
+                    else changeSlide(-1);
+                }
+            }, { passive: true });
+
+            // quick tap left/right halves to navigate
+            container.addEventListener('click', (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                if (x < rect.width * 0.4) changeSlide(-1);
+                else if (x > rect.width * 0.6) changeSlide(1);
+            });
+        }
 
 
         // --- UTILS ---
@@ -651,6 +695,7 @@
 
         // Initialize
         renderProjects();
+        setupModalTouchGestures();
 
     </script>
 </body>
