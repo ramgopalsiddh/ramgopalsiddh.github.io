@@ -1,637 +1,619 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ramgopal.dev</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/1aa96888a3.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</head>
+    <title>Ram Gopal Siddh | Software Engineer</title>
+    <meta name="description" content="Portfolio of Ram Gopal Siddh, a Software Engineer specializing in Python, Ruby on Rails, React Native, and more.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght @400;500;600;700&family=Poppins:wght @500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<body>
-    <div class="container">
-        <div id="header" class="header">
-            <div class="header-text">
-                <h2>Hi👋 i'm <span>Ram Gopal Siddh</span> </h2>
-                <p> Full Stack Developer, Building with Python, Flask, Ruby On Rails, React, React-Native, SQL, JavaScript and Beyond </p>
-                <p> Looking for software engineer (Backend) roles see <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank">My Resume</a></p>
-            </div>
-        </div>
-
-
-                <!-----------------------------------Skill & Experience------------------------------------------>
-        <div class="tab-contents-top">
-            <div class="tab-title-top">
-                <p class="tab-links-top">Skills</p>
-            </div>
-            <div >
-                <ul>
-                    <li><b>Languages & Frameworks :-</b> Python, Ruby, JavaScript, SQL, Flask, Ruby On Rails, React, React-Native, HTML, CSS, Bootstrap</li>
-                    <li><b>Tools & Platforms :-</b> Git, Github, VS Code, Linux, Windows, Auth0</li>
-                </ul>
-            </div>
-            <div class="tab-title-top">
-                <p class="tab-links-top">Experience</p>
-            </div>
-            <div >
-                <ul>
-                    <li><a href="https://pongfox.com/" target="_blank" class="company-link"><span class="pongfox-link">PongFox</span> (Bodhi Labs Software Services pvt ltd)</a> <span>Bengaluru, Karnataka, India</span> </li>
-                    <li>Software Engineer <span>Sept 2024 - Present</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <h3 class="sub-title">Contact Me</h3>
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4338ca', // Indigo 700 - Bolder/Darker
+                        primaryHover: '#3730a3', // Indigo 800
+                        secondary: '#e0e7ff', // Indigo 100 - More visible background
+                        dark: '#020617', // Slate 950 - Almost pure black for headings
+                        grayText: '#334155', // Slate 700 - Darker gray for better readability
+                        light: '#f8fafc', // Slate 50
+                        accent: '#0369a1', // Sky 700 - Bolder accent
+                        cardBg: '#ffffff',
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.1)',
+                        'glow': '0 0 20px rgba(67, 56, 202, 0.4)' // Stronger glow
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
         
-        <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="btn btn2" style="margin-bottom: 0;">View My Resume</a>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+        }
 
-        <div id="contact">
-            <div class="row">
-                <div class="contact-left">
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/ramgopalsiddh/" target="_blank"><i
-                                class="fa-brands fa-github-square"></i></a>
-                        <a href="https://x.com/ramgopalsiddh1" target="_blank"><i
-                                class="fa-brands fa-twitter-square"></i></a>
-                        <a href="https://www.youtube.com/@ramgopalsiddh" target="_blank"><i
-                                    class="fa-brands fa-youtube-square"></i></a>
-                        <a href="mailto:ramgopalsiddh.000@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
-                    </div>
+        .gradient-text {
+            background: linear-gradient(135deg, #4338ca 0%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
+        .hero-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(67, 56, 202, 0.1) 0%, rgba(255,255,255,0) 70%);
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-extrabold text-dark tracking-tight">
+                Ram Gopal Siddh
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-base font-semibold text-grayText hover:text-primary transition-colors">Home</a>
+                <a href="#skills" class="text-base font-semibold text-grayText hover:text-primary transition-colors">Skills</a>
+                <a href="#experience" class="text-base font-semibold text-grayText hover:text-primary transition-colors">Experience</a>
+                <a href="#projects" class="text-base font-semibold text-grayText hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="text-base font-semibold text-grayText hover:text-primary transition-colors">Contact</a>
+                <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="px-6 py-2.5 bg-dark text-white text-sm font-bold rounded-full hover:bg-primary hover:shadow-lg transition-all transform hover:-translate-y-0.5 border-2 border-transparent">
+                    Resume <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-dark focus:outline-none p-2 rounded-lg hover:bg-gray-200">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 absolute w-full left-0 shadow-xl">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="mobile-link text-lg font-bold text-gray-800">Home</a>
+                <a href="#skills" class="mobile-link text-lg font-bold text-gray-800">Skills</a>
+                <a href="#experience" class="mobile-link text-lg font-bold text-gray-800">Experience</a>
+                <a href="#projects" class="mobile-link text-lg font-bold text-gray-800">Projects</a>
+                <a href="#contact" class="mobile-link text-lg font-bold text-gray-800">Contact</a>
+                <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="text-primary font-extrabold">View Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-12 md:pt-40 md:pb-16 relative overflow-hidden">
+        <div class="hero-blob"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary text-primary text-m font-bold mb-6 animate-fade-in-up border border-indigo-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-600 mr-2 animate-pulse"></span>
+                    Available for Software Engineer Roles
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-dark mb-6 leading-[1.1] tracking-tight drop-shadow-sm">
+                    Hello, I'm <br class="hidden md:block" />
+                    <span class="gradient-text">Ram Gopal Siddh</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-grayText mb-10 max-w-2xl leading-relaxed font-medium">
+                    Software Engineer specializing in <span class="font-bold text-dark">Full Stack Development</span>.
+                    I build robust applications using Python, Flask, Ruby On Rails, React, and React Native.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="px-8 py-4 bg-dark text-white rounded-lg shadow-lg hover:bg-primary hover:shadow-glow transition-all transform hover:-translate-y-1 font-bold text-center min-w-[160px] border-2 border-transparent">
+                        View Resume <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                    </a>
+                    <a href="#projects" class="px-8 py-4 bg-primary text-white rounded-lg shadow-lg hover:bg-primaryHover hover:shadow-glow transition-all transform hover:-translate-y-1 font-bold text-center min-w-[160px] border-2 border-transparent">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-white border-2 border-gray-300 text-dark rounded-lg hover:border-primary hover:text-primary transition-all font-bold text-center min-w-[160px]">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-12 flex flex-wrap items-center gap-5 md:gap-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <a href="https://www.linkedin.com/in/ramgopalsiddh" target="_blank" class="text-[#0077b5] transition-all transform hover:-translate-y-1 scale-100 hover:scale-110" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin text-6xl md:text-7xl"></i>
+                    </a>
+                    <a href="https://github.com/ramgopalsiddh" target="_blank" class="text-dark transition-all transform hover:-translate-y-1 scale-100 hover:scale-110" title="GitHub">
+                        <i class="fa-brands fa-github-square text-6xl md:text-7xl"></i>
+                    </a>
+                    <!-- Twitter Icon (Classic Bird) -->
+                    <a href="https://x.com/ramgopalsiddh1" target="_blank" class="text-dark transition-all transform hover:-translate-y-1 scale-100 hover:scale-110" title="Twitter">
+                        <i class="fa-brands fa-x-twitter text-6xl md:text-7xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ramgopalsiddh" target="_blank" class="text-[#FF0000] transition-all transform hover:-translate-y-1 scale-100 hover:scale-110" title="YouTube">
+                        <i class="fa-brands fa-youtube-square text-6xl md:text-7xl"></i>
+                    </a>
+                    <a href="mailto:ramgopalsiddh.000@gmail.com" target="_blank" class="text-primary transition-all transform hover:-translate-y-1 scale-100 hover:scale-110" title="Email">
+                        <i class="fa-solid fa-envelope text-6xl md:text-7xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-------------------------Projects------------------------------------------->
-        <h3 class="sub-title">Projects</h3>
-        <!-- projects flexbox -->
-        <div id="projects" class="projects">
-            <div class="flex-item">
-                <h3>Capstone (Casting Agency)</h3>
-                <p>The Casting Agency Project employs Auth0 roles (Casting Assistant, Casting Director, Executive
-                    Producer) and API permissions to optimize movie production workflows, enabling tasks such as
-                    viewing, adding, updating, and deleting actors and movies, showcasing a versatile set of web
-                    development skills.</p>
-                <br>
-                <p>Built With: HTML, CSS, JavaScript, Auth0, SQLAlchemy & Python</p>
-
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/O02NiBLoulo" target="_blank">Demo Video Link</a>
-
-                <!-- comman modal to show full project image -->
-                <div id="project" class="modal" onclick="closeModal()">
-                    <span id="closeButton" class="closeBtn" onclick="closeModal(); event.stopPropagation();">&times;</span>
-                    <button id="previousButton" onclick="previousSlide(); event.stopPropagation();"><i class="fas fa-chevron-left"></i></button>
-                    <img id="project-content" class="modal-content" src="" alt="project 1" onclick="event.stopPropagation();">
-                    <button id="nextButton" onclick="nextSlide(); event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
-                </div>
-
-                <div class="thumbnail-container" data-project-id="project1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone1.png"
-                        alt="project 1 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone2.png"
-                        alt="project 1 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone3.png"
-                        alt="project 1 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone4.png"
-                        alt="project 1 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/capstone/capstone5.png"
-                        alt="project 1 thumbnail 4">
-                </div>
-            </div>
-
-
-            <div class="flex-item">
-                <h3>Blog Website (Ruby On Rails)</h3>
-                <p>The blog website is built with Ruby on Rails and supports two user 
-                    types: normal users and admin users. Normal users can sign up, add
-                     articles, edit their own articles & profile, and view all 
-                     categories & Articles. Admin users have additional privileges, including adding 
-                     new categories, editing existing categories, editing other users' 
-                     articles, and deleting articles from other users.</p>
-                <br>
-                <p>Built With: HTML, CSS, SQL, Bootstrap & Ruby On Rails</p>
+    <!-- Skills & Experience Section -->
+    <section id="skills" class="py-16 md:py-24 bg-white border-y border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col gap-y-20">
                 
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/blog_ror"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/a3Z-PQ89Z9M" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project7">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/blog_ror/blog_ror1.png"
-                        alt="project 7 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/blog_ror/blog_ror2.png"
-                        alt="project 7 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/blog_ror/blog_ror3.png"
-                        alt="project 7 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/blog_ror/blog_ror4.png"
-                        alt="project 7 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/blog_ror/blog_ror5.png"
-                        alt="project 7 thumbnail 4">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>SaaS Project Management App (Ruby On Rails)</h3>
-                <p>The SaaS Project Management App, constructed with Ruby on Rails & Bootstrap, adopts a multi-tenancy framework,
-                     accommodating two distinct user roles: Admin and Editor. Admins wield extensive control,
-                      including project creation, task management, user invitation/removal, and overall project
-                       oversight. Editors, in contrast, enjoy restricted access, limited to viewing and managing
-                        their tasks without the ability to edit artifacts.</p>
-                <br>
-                <p>Built With: HTML, CSS, SQL, Multi-tenancy & Ruby On Rails</p>
-                
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/saas-project-management-app"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/xpHL7vgkadk" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project8">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_1.png"
-                        alt="project 8 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_2.png"
-                        alt="project 8 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_3.png"
-                        alt="project 8 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_4.png"
-                        alt="project 8 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_5.png"
-                        alt="project 8 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_6.png"
-                        alt="project 8 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_7.png"
-                        alt="project 8 thumbnail 6">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_8.png"
-                        alt="project 8 thumbnail 7">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_9.png"
-                        alt="project 8 thumbnail 8">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_10.png"
-                        alt="project 8 thumbnail 9">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_11.png"
-                        alt="project 8 thumbnail 10">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/saas_project/saas_project_12.png"
-                        alt="project 8 thumbnail 11">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>Ludo Game App(React-Native)</h3>
-                <p>The Ludo game supports 4 players and uses Redux to save the game state, allowing it to resume seamlessly even after an app restart. Players can restart or continue the game, ensuring progress is saved until app data is cleared. The app also features different sound effects for actions, enhancing the overall gaming experience.</p>
-                <br>
-                <p>Built With: Using React-Native & Redux </p>
-                
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/ludo_game"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/YwhElcEn2t0" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project12">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game1.jpg"
-                        alt="project 12 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game2.jpg"
-                        alt="project 12 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game3.jpg"
-                        alt="project 12 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game4.jpg"
-                        alt="project 12 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game5.jpg"
-                        alt="project 12 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game6.jpg"
-                        alt="project 12 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game7.jpg"
-                        alt="project 12 thumbnail 6">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game8.jpg"
-                        alt="project 12 thumbnail 7">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game9.jpg"
-                        alt="project 12 thumbnail 8">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/ludo_game/ludo_game10.jpg"
-                        alt="project 12 thumbnail 9">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>Finance Tracker App (Ruby On Rails)</h3>
-                <p>The Finance Tracker App, developed on Ruby on Rails & Bootstrap, enables users to efficiently manage
-                     their investment portfolios. Users can search for, add, and remove stocks, all while 
-                     accessing real-time data sourced from an API. Furthermore, the app facilitates social
-                      engagement by allowing users to search for and follow other users/friends, granting
-                       them access to view their portfolios and stay informed about their investment 
-                       activities.</p>
-                <br>
-                <p>Built With: HTML, CSS, SQL & Ruby On Rails</p>
-                
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/finance-tracker"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/jxFF07Vagnk" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project9">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_1.png"
-                        alt="project 9 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_2.png"
-                        alt="project 9 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_3.png"
-                        alt="project 9 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_4.png"
-                        alt="project 9 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_5.png"
-                        alt="project 9 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_6.png"
-                        alt="project 9 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/finance_tracker/finance_tracker_7.png"
-                        alt="project 9 thumbnail 6">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>Fyyur: Connecting Musicians and Venues</h3>
-                <p>Fyyur is a music venue and artist booking platform with defined views and controllers. The project
-                    focuses on connecting artists and venues through a PostgreSQL-backed API, enabling functionalities
-                    like creating, searching, and learning about venues, artists, and shows for enhanced music discovery
-                    and bookings.</p>
-                <br>
-                <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
-
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/project_fyyur"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/LBD0sOBiPLs" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur1.png"
-                        alt="project 2 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur2.png"
-                        alt="project 2 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur3.png"
-                        alt="project 2 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur4.png"
-                        alt="project 2 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur5.png"
-                        alt="project 2 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur6.png"
-                        alt="project 2 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/fyyur/fyyur7.png"
-                        alt="project 2 thumbnail 6">
-                </div>
-            </div>
-
-
-            <div class="flex-item">
-                <h3>Trivia</h3>
-                <p>Trivia is a web page designed for playing games based on different subjects. It reveals answers,
-                    displays results after user responses, and showcases correct answers. The platform provides an
-                    interactive and engaging experience for users participating in subject-based trivia games</p>
-                <br>
-                <p>Built With: HTML, CSS, JavaScript, React, SQLAlchemy & Python</p>
-
-                <a class="flex-item-link" href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/trivia"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/NO9CLrjgiTI" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia1.png"
-                        alt="project 3 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia2.png"
-                        alt="project 3 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia3.png"
-                        alt="project 3 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia4.png"
-                        alt="project 3 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia5.png"
-                        alt="project 3 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia6.png"
-                        alt="project 3 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/trivia/trivia7.png"
-                        alt="project 3 thumbnail 6">
-                </div>
-            </div>
-
-
-            <div class="flex-item">
-                <h3>Coffee shop menu</h3>
-                <p>This is for a digitally enabled cafe and needs assistance in setting up a full-stack drink menu
-                    application. The platform should display ingredient ratios through graphics, enable public users to
-                    view drink details, allow baristas to access recipes, and empower managers to create and edit
-                    drinks.</p>
-                <br>
-                <p>Built With: HTML, CSS, TypeScript, Auth0, SQLAlchemy & Python</p>
-
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/coffee_shop"
-                    target="_blank">Github Link</a>
-
-                <div class="thumbnail-container" data-project-id="project4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee1.png"
-                        alt="project 4 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee2.png"
-                        alt="project 4 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee3.png"
-                        alt="project 4 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee4.png"
-                        alt="project 4 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/coffee/coffee5.png"
-                        alt="project 4 thumbnail 4">
-                </div>
-            </div>
-
-
-            <div class="flex-item">
-                <h3>Todo With List</h3>
-                <p>The Todo app efficiently organizes tasks by creating distinct lists, each containing its respective
-                    todos. Users can manage and prioritize their activities, ensuring a streamlined and organized
-                    approach to task management.</p>
-                <br>
-                <p>Built With: HTML, CSS, JavaScript, SQLAlchemy & Python</p>
-
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/todoapp"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/FMWkbzpMM1c" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo1.png"
-                        alt="project 5 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo2.png"
-                        alt="project 5 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo3.png"
-                        alt="project 5 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo4.png"
-                        alt="project 5 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/todo/todo5.png"
-                        alt="project 5 thumbnail 4">
-                </div>
-            </div>
-
-
-            <div class="flex-item">
-                <h3>Friends List (Contacts)</h3>
-                <p>This web app facilitates the creation of a friends/contact list with Name, email, Twitter handle, and
-                    mobile number details. It includes a secure login system, offering users a convenient way to manage
-                    and connect with their contacts.</p>
-                <br>
-                <p>Built With: HTML, CSS, JavaScript & Ruby</p>
-
-                <a class="flex-item-link" href="https://github.com/ramgopalsiddh/friends" target="_blank">Github
-                    Link</a>
-
-                <div class="thumbnail-container" data-project-id="project6">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends1.png"
-                        alt="project 6 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends2.png"
-                        alt="project 6 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends3.png"
-                        alt="project 6 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends4.png"
-                        alt="project 6 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends5.png"
-                        alt="project 6 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/friends/friends6.png"
-                        alt="project 6 thumbnail 5">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>Photo App (Ruby On Rails)</h3>
-                <p>The Photo App, made with Ruby on Rails, lets you create an account.
-                     You pay based on your account type, then you can add photos and manage them.
-                      You can view, edit, and delete your photos. We use Stripe for payments
-                       and Devise for authentication. </p>
-                <br>
-                <p>Built With: HTML, CSS, SQL, Bootstrap & Ruby On Rails</p>
-                
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/photo-app"
-                    target="_blank">Github Link</a>
-                <a class="flex-item-link" href="https://youtu.be/InfLFWFI6Es" target="_blank">Demo Video Link</a>
-
-                <div class="thumbnail-container" data-project-id="project10">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_1.png"
-                        alt="project 10 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_2.png"
-                        alt="project 10 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_3.png"
-                        alt="project 10 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_4.png"
-                        alt="project 10 thumbnail 3">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_5.png"
-                        alt="project 10 thumbnail 4">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_6.png"
-                        alt="project 10 thumbnail 5">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_7.png"
-                        alt="project 10 thumbnail 6">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_8.png"
-                        alt="project 10 thumbnail 7">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/photo_app/photo_app_9.png"
-                        alt="project 10 thumbnail 8">
-                </div>
-            </div>
-
-            <div class="flex-item">
-                <h3>Rails Chat (Ruby On Rails)</h3>
-                <p>The Rails Chat is built with Ruby on Rails. The Real-Time Messaging App 
-                    employs Action Cable and Web Sockets for instant communication. Users 
-                    can join multiple chatrooms, send messages, and see updates in real-time
-                     without page refreshes. It features a user-friendly interface powered 
-                     by Semantic-UI.</p>
-                <br>
-                <p>Built With: HTML, CSS, SQL, Action Cable & Ruby On Rails</p>
-                
-                <a class="flex-item-link"
-                    href="https://github.com/ramgopalsiddh/railschat"
-                    target="_blank">Github Link</a>
-                <!-- <a class="flex-item-link" href="https://youtu.be/a3Z-PQ89Z9M" target="_blank">Demo Video Link</a> -->
-
-                <div class="thumbnail-container" data-project-id="project11">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/railschat/railschat_1.png"
-                        alt="project 11 thumbnail 0">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/railschat/railschat_2.png"
-                        alt="project 11 thumbnail 1">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/railschat/railschat_3.png"
-                        alt="project 11 thumbnail 2">
-                    <img class="thumbnail" onclick="getImgSrc(this)" src="projectimages/railschat/railschat_4.png"
-                        alt="project 11 thumbnail 3">
-                </div>
-            </div>
-
-        </div>
-
-        <!---------------------------------Contact----------------------------------------->
-        <div id="contact">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title"> Contact Me</h1>
-
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/ramgopalsiddh/" target="_blank"><i
-                                class="fa-brands fa-github-square"></i></a>
-                        <a href="https://x.com/ramgopalsiddh1" target="_blank"><i
-                                class="fa-brands fa-twitter-square"></i></a>
-                        <a href="https://www.youtube.com/@ramgopalsiddh" target="_blank"><i
-                                    class="fa-brands fa-youtube-square"></i></a>
-                        <a href="mailto:ramgopalsiddh.000@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
+                <!-- Skills -->
+                <div>
+                    <div class="flex items-center mb-10">
+                        <span class="w-2 h-10 bg-primary rounded mr-4"></span>
+                        <h2 class="text-3xl font-heading font-extrabold text-dark">Technical Skills</h2>
+                    </div>
+                    
+                    <div class="mb-12 group">
+                        <h3 class="text-xl font-bold mb-5 text-dark flex items-center">
+                            <i class="fa-solid fa-code text-accent mr-3"></i> Languages & Frameworks
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Ruby</span>
+                            <span class="skill-badge">JavaScript (ES6+)</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">Ruby on Rails</span>
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">React-Native</span>
+                            <span class="skill-badge">HTML5/CSS3</span>
+                            <span class="skill-badge">Bootstrap/Tailwind</span>
+                        </div>
                     </div>
 
-
-                    <a href="./ram_gopal_siddh_8209820704.pdf" target="_blank" class="btn btn2"> View My Resume</a>
-
-
+                    <div class="group">
+                        <h3 class="text-xl font-bold mb-5 text-dark flex items-center">
+                            <i class="fa-solid fa-toolbox text-accent mr-3"></i> Tools & Platforms
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Git & GitHub</span>
+                            <span class="skill-badge">VS Code</span>
+                            <span class="skill-badge">Linux/Unix</span>
+                            <span class="skill-badge">Windows</span>
+                            <span class="skill-badge">Auth0</span>
+                            <span class="skill-badge">PostgreSQL</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div> -->
+
+                <!-- Experience -->
+                <div id="experience">
+                    <div class="flex items-center mb-10">
+                        <span class="w-2 h-10 bg-primary rounded mr-4"></span>
+                        <h2 class="text-3xl font-heading font-extrabold text-dark">Experience</h2>
+                    </div>
+                    
+                    <div class="relative border-l-4 border-gray-200 ml-3 space-y-12">
+                        <!-- Experience Item -->
+                        <div class="relative pl-10 group">
+                            <!-- Dot -->
+                            <span class="absolute -left-[11px] top-2 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-primary transition-colors duration-300 ring-2 ring-transparent group-hover:ring-indigo-200"></span>
+                            
+                            <h3 class="text-2xl font-bold text-dark mb-1">Software Engineer</h3>
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-4">
+                                <a href="https://pongfox.com/" target="_blank" class="text-primary font-bold hover:underline flex items-center text-2xl">
+                                    PongFox (Bodhi Labs) <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-2"></i>
+                                </a>
+                                <span class="hidden sm:block text-gray-400 font-bold">•</span>
+                                <span class="text-m text-dark font-bold bg-gray-200 px-3 py-1 rounded-full">Sept 2024 - Present</span>
+                            </div>
+                            <p class="text-grayText leading-relaxed font-medium text-lg">
+                                I am responsible for developing end-to-end solutions across <span class="font-bold text-dark">web, mobile, and backend systems </span>. I specialize in building scalable <span class="font-bold text-dark">Python APIs</span>, developing cross-platform apps with <span class="font-bold text-dark">React Native</span>, and  <span class="font-bold text-dark">React.js</span> frontends to ensure high-performance, real-time data synchronization between IoT hardware and user interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-----------------------------------about------------------------------------------>
-        <div id="about" class="about">
-            <!-- <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">About me</h1>
-                    <div class="tab-title">
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li> <span>2019 - 2023</span><br>B.tech student at<a style="text-decoration: none;"
-                                    href="https://gitjaipur.com/" target="_blank"> GIT Jaipur</a></li>
-                            <li> <span>2018 - 2019</span><br> 12th from Shri Bhartiya Adarsh Vidhyapeeth
-                                Sr.Sec.School
-                                ,Sardarshahar(RBSE)</li>
-                            <li> <span>2016 - 2017</span><br> 10th from Sanskar children
-                                aca.sr.sec.sch.,sardarshar(RBSE) </li>
-                        </ul>
-                    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-light relative border-b border-gray-200">
+        <!-- Background decoration -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-extrabold text-dark mt-3 mb-4">Featured Projects</h2>
+
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Projects will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            
+            <div class="max-w-3xl mx-auto bg-gradient-to-br from-indigo-50 to-white p-6 md:p-12 rounded-3xl border border-indigo-200 shadow-xl">
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold mb-6 text-dark">Let's Work Together</h2>
+                <p class="text-xl text-grayText font-medium mb-10">
+                    I'm actively seeking opportunities as a Software Engineer. 
+                    If you have a challenging project or a role that needs a dedicated developer, I'd love to hear from you.
+                </p>
+                
+                <a href="mailto:ramgopalsiddh.000@gmail.com" class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-10 py-4 md:py-5 bg-dark text-white text-base md:text-xl font-bold rounded-xl hover:bg-primary hover:shadow-glow transition-all transform hover:-translate-y-1 mb-8 md:mb-10 border-2 border-transparent w-full md:w-auto justify-center break-all md:break-normal">
+                    <i class="fa-solid fa-envelope"></i> ramgopalsiddh.000@gmail.com
+                </a>
+
+                <div class="flex justify-center items-center flex-wrap gap-4 md:gap-6 mt-4">
+                    <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank" class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white text-dark hover:bg-[#0077b5] hover:text-white transition-all text-2xl md:text-3xl border-2 border-gray-300 hover:border-[#0077b5] shadow-sm">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/ramgopalsiddh/" target="_blank" class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white text-dark hover:bg-black hover:text-white transition-all text-2xl md:text-3xl border-2 border-gray-300 hover:border-black shadow-sm">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <!-- Twitter Icon (Classic Bird) -->
+                    <a href="https://x.com/ramgopalsiddh1" target="_blank" class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white text-dark hover:bg-dark hover:text-white transition-all text-2xl md:text-3xl border-2 border-gray-300 hover:border-dark shadow-sm">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ramgopalsiddh" target="_blank" class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white text-dark hover:bg-[#FF0000] hover:text-white transition-all text-2xl md:text-3xl border-2 border-gray-300 hover:border-[#FF0000] shadow-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
                 </div>
-            </div> -->
-            <div class="copyright">
-                <p>Made with <i class="fa-solid fa-heart"></i> By <a class="copyright-link"
-                        href="https://github.com/ramgopalsiddh" target="_blank">RAM GOPAL SIDDH</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 border-t border-gray-800">
+        <div class="w-full max-w-7xl mx-0 md:mx-auto px-0 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class=" text-center md:text-left">
+                <a href="#" class="text-2xl font-extrabold tracking-tight">Ram Gopal Siddh</a>
+                <p class="text-sm text-gray-400 mt-2 font-medium">Software Engineer</p>
+            </div>
+            
+            <div class=" text-center">
+                <p class="text-white text-2xl font-extrabold">
+                    Made with <i class="fa-solid fa-heart text-red-500 mx-1 animate-pulse"></i> by <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank" class="text-primary hover:underline">Ram Gopal</a>
+                </p>
+            </div>
+
+            <div class="w-1/3"></div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden bg-slate-950/95 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300">
+        
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl z-50 focus:outline-none transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="relative w-full max-w-6xl flex flex-col items-center">
+            
+            <!-- Main Image Container -->
+            <div class="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center">
+                <img id="modal-image" src="" alt="Project Preview" class="max-h-full max-w-full object-contain rounded-lg shadow-2xl border-4 border-white">
+                
+                <button onclick="changeSlide(-1)" class="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 w-14 h-14 flex items-center justify-center text-black hover:bg-white/10 rounded-full transition-all border border-transparent hover:border-black/20">
+                    <i class="fas fa-chevron-left text-5xl"></i>
+                </button>
+                <button onclick="changeSlide(1)" class="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 w-14 h-14 flex items-center justify-center text-black hover:bg-white/10 rounded-full transition-all border border-transparent hover:border-black/20">
+                    <i class="fas fa-chevron-right text-5xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Info -->
+            <div class="mt-8 text-center text-white w-full max-w-3xl">
+                <h3 id="modal-title" class="text-3xl font-bold mb-3"></h3>
+                <p id="modal-counter" class="text-base text-gray-400 mb-8 font-mono tracking-wider"></p>
+                <div class="flex justify-center gap-5">
+                    <a id="modal-github" href="#" target="_blank" class="px-8 py-3 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors text-base font-bold flex items-center">
+                        <i class="fab fa-github mr-2"></i> View Code
+                    </a>
+                    <a id="modal-demo" href="#" target="_blank" class="px-8 py-3 bg-primary rounded-lg hover:bg-primaryHover transition-colors text-base font-bold hidden">
+                        <i class="fas fa-play mr-2"></i> Watch Demo
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
+    <style>
+        .skill-badge {
+            @apply px-4 py-2 bg-secondary text-primary font-bold rounded-lg text-sm border border-indigo-200 hover:border-primary hover:bg-white transition-all cursor-default shadow-sm;
+        }
+        
+
+    </style>
+
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+        // --- DATA: All Project Information ---
+        const projects = [
+            {
+                id: 'capstone',
+                title: 'Casting Agency API',
+                desc: 'A robust API optimizing movie production workflows. Implements Auth0 RBAC (Assistant, Director, Producer) for secure resource management.',
+                tags: ['Python', 'Flask', 'Auth0', 'PostgreSQL'],
+                github: 'https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/capstone',
+                demo: 'https://youtu.be/O02NiBLoulo',
+                images: Array.from({length: 5}, (_, i) => `projectimages/capstone/capstone${i + 1}.png`)
+            },
+            {
+                id: 'saas',
+                title: 'SaaS Project Manager',
+                desc: 'Multi-tenant Rails application featuring tenant isolation, role-based access (Admin/Editor), and subscription architecture.',
+                tags: ['Ruby on Rails', 'Multi-tenancy', 'PostgreSQL', 'Bootstrap'],
+                github: 'https://github.com/ramgopalsiddh/saas-project-management-app',
+                demo: 'https://youtu.be/xpHL7vgkadk',
+                images: Array.from({length: 12}, (_, i) => `projectimages/saas_project/saas_project_${i + 1}.png`)
+            },
+            {
+                id: 'ludo',
+                title: 'Ludo Multiplayer',
+                desc: 'Cross-platform mobile game. Features complex game logic and Redux persistence for seamless game resumption.',
+                tags: ['React-Native', 'Redux', 'iOS', 'Android'],
+                github: 'https://github.com/ramgopalsiddh/ludo_game',
+                demo: 'https://youtu.be/YwhElcEn2t0',
+                images: Array.from({length: 10}, (_, i) => `projectimages/ludo_game/ludo_game${i + 1}.jpg`)
+            },
+            {
+                id: 'finance',
+                title: 'Stock Finance Tracker',
+                desc: 'Investment portfolio manager. Integrates real-time IEX Cloud API for stock data and social features to track friends.',
+                tags: ['Ruby on Rails', 'IEX API', 'Devise', 'Ajax'],
+                github: 'https://github.com/ramgopalsiddh/finance-tracker',
+                demo: 'https://youtu.be/jxFF07Vagnk',
+                images: Array.from({length: 7}, (_, i) => `projectimages/finance_tracker/finance_tracker_${i + 1}.png`)
+            },
+            {
+                id: 'fyyur',
+                title: 'Fyyur Booking Site',
+                desc: 'Venues and Artist booking site. Complex many-to-many database modeling using SQLAlchemy and PostgreSQL.',
+                tags: ['Flask', 'SQLAlchemy', 'PostgreSQL', 'Jinja2'],
+                github: 'https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/project_fyyur',
+                demo: 'https://youtu.be/LBD0sOBiPLs',
+                images: Array.from({length: 7}, (_, i) => `projectimages/fyyur/fyyur${i + 1}.png`)
+            },
+            {
+                id: 'blog',
+                title: 'Tech Blog Platform',
+                desc: 'Full-featured CMS with user authentication, article management, and admin dashboard controls.',
+                tags: ['Ruby on Rails', 'MVC', 'SQLite', 'Rest API'],
+                github: 'https://github.com/ramgopalsiddh/blog_ror',
+                demo: 'https://youtu.be/a3Z-PQ89Z9M',
+                images: Array.from({length: 5}, (_, i) => `projectimages/blog_ror/blog_ror${i + 1}.png`)
+            },
+            {
+                id: 'trivia',
+                title: 'Trivia API',
+                desc: 'Quiz game backend. Features question pagination, category filtering, and error handling for a smooth UX.',
+                tags: ['React', 'Flask', 'API Design', 'CORS'],
+                github: 'https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/trivia',
+                demo: 'https://youtu.be/NO9CLrjgiTI',
+                images: Array.from({length: 7}, (_, i) => `projectimages/trivia/trivia${i + 1}.png`)
+            },
+            {
+                id: 'coffee',
+                title: 'Coffee Shop IAM',
+                desc: 'Secure drink menu management. Demonstrates secure Identity and Access Management implementation.',
+                tags: ['Auth0', 'JWT', 'Python', 'Ionic'],
+                github: 'https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/coffee_shop',
+                demo: null,
+                images: Array.from({length: 5}, (_, i) => `projectimages/coffee/coffee${i + 1}.png`)
+            },
+            {
+                id: 'photo',
+                title: 'Photo SaaS App',
+                desc: 'Image management platform with Stripe integration for premium subscriptions and email handling.',
+                tags: ['Ruby on Rails', 'Stripe API', 'AWS S3', 'Devise'],
+                github: 'https://github.com/ramgopalsiddh/photo-app',
+                demo: 'https://youtu.be/InfLFWFI6Es',
+                images: Array.from({length: 9}, (_, i) => `projectimages/photo_app/photo_app_${i + 1}.png`)
+            },
+            {
+                id: 'chat',
+                title: 'Real-time Chat',
+                desc: 'Instant messaging app. Leverages ActionCable for WebSocket communication to enable live updates.',
+                tags: ['Rails', 'ActionCable', 'WebSockets', 'Redis'],
+                github: 'https://github.com/ramgopalsiddh/railschat',
+                demo: null,
+                images: Array.from({length: 4}, (_, i) => `projectimages/railschat/railschat_${i + 1}.png`)
+            },
+            {
+                id: 'todo',
+                title: 'Todo Lists',
+                desc: 'Task management with categorical organization. Complex database migrations and relationship mapping.',
+                tags: ['Flask', 'PostgreSQL', 'CRUD', 'Docker'],
+                github: 'https://github.com/ramgopalsiddh/udacity-full-stack-nd/tree/main/todoapp',
+                demo: 'https://youtu.be/FMWkbzpMM1c',
+                images: Array.from({length: 5}, (_, i) => `projectimages/todo/todo${i + 1}.png`)
+            },
+            {
+                id: 'friends',
+                title: 'Contacts Manager',
+                desc: 'Address book application with user accounts and social media link integration.',
+                tags: ['Ruby on Rails', 'Bootstrap', 'Authentication'],
+                github: 'https://github.com/ramgopalsiddh/friends',
+                demo: null,
+                images: Array.from({length: 6}, (_, i) => `projectimages/friends/friends${i + 1}.png`)
+            }
+        ];
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
+        // --- RENDER LOGIC ---
+
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = projects.map((project, index) => `
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-3xl shadow-glow transition-all duration-300 flex flex-col h-full hover:-translate-y-2 group cursor-pointer" onclick="openModal(${index})">
+                    
+                    <!-- Thumbnail -->
+                    <div class="h-56 overflow-hidden bg-gray-100 relative border-b border-gray-200">
+                        <img src="${project.images[0]}" alt="${project.title}" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                             onerror="this.src='https://placehold.co/600x400/f1f5f9/475569?text=No+Preview'">
+                        
+                        <div class="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="text-white font-bold px-6 py-2.5 border-2 border-white/50 bg-white/10 rounded-full hover:bg-white hover:text-dark transition-all">View Details</span>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-dark group-hover:text-primary transition-colors">${project.title}</h3>
+                        </div>
+                        
+                        <p class="text-grayText text-sm mb-5 flex-grow leading-relaxed font-medium">${project.desc}</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${project.tags.map(tag => 
+                                `<span class="text-xs px-2.5 py-1 bg-secondary text-primary rounded font-bold border border-indigo-100">${tag}</span>`
+                            ).join('')}
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-3 mt-auto pt-4 border-t border-gray-200">
+                             <a href="${project.github}" target="_blank" onclick="event.stopPropagation()" class="${project.demo ? 'col-span-1' : 'col-span-2'} py-2.5 rounded-lg bg-gray-50 hover:bg-gray-100 text-dark text-sm font-bold transition-colors flex items-center justify-center gap-2 border border-gray-300 group/btn shadow-sm hover:shadow">
+                                <i class="fab fa-github text-lg text-gray-700 group-hover/btn:text-dark"></i> Code
+                            </a>
+                            ${project.demo ? `
+                                <a href="${project.demo}" target="_blank" onclick="event.stopPropagation()" class="col-span-1 py-2.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 text-sm font-bold transition-colors flex items-center justify-center gap-2 border border-red-200 shadow-sm hover:shadow">
+                                    <i class="fab fa-youtube text-lg"></i> Demo
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        // side menu style 
-        var sidemenu = document.getElementById("sidemenu");
+        // --- MODAL LOGIC ---
+        
+        const modal = document.getElementById('modal');
+        let currentProjectIndex = 0;
+        let currentImageIndex = 0;
 
-        function openmenu() {
-            sidemenu.style.right = "0";
+        function openModal(projectIndex) {
+            currentProjectIndex = projectIndex;
+            currentImageIndex = 0;
+            updateModalContent();
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Add key listener
+            document.addEventListener('keydown', handleKeyModal);
         }
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-
-        // google sheet script
-        /*const scriptURL =
-            'https://script.google.com/macros/s/AKfycbxp6oWHmjKhZh-7XkPsBmtwQD9vwL2i8UnAd01JZGzpoxfzUy_6uTO3im9_UoFSlKzZNQ/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully"
-                    setTimeout(function () {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        }) */
-
-        var currentProjectId = 0;
-        var currentImageIndex = 0;
-
-        // js to open and close project image modal
-        function getImgSrc(param) {
-            var imgSrc = $(param).attr("src");
-            document.getElementById('project').style.display = "flex";
-            document.getElementById(`project-content`).src = imgSrc;
-
-            // show next and prev button only when modal is open
-            $("#previousButton, #nextButton").show();
-
-            var projectId = $(param).closest(".thumbnail-container").data("project-id");
-            if (projectId != null) {
-                currentProjectId = projectId
-            }
-
-            // Add event listener for arrow key navigation
-            document.addEventListener('keydown', handleKeyPress);
-        };
 
         function closeModal() {
-            document.getElementById(`project`).style.display = "none";
-            // Remove event listener when closing the modal
-            document.removeEventListener('keydown', handleKeyPress);
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.removeEventListener('keydown', handleKeyModal);
         }
 
-        function nextSlide() {
-            var thumbnails = $(".thumbnail-container[data-project-id='" + currentProjectId + "'] .thumbnail");
-            currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
-            var imgSrc = thumbnails.eq(currentImageIndex).attr("src");
-            $("#project-content").attr("src", imgSrc);
-        }
-
-        function previousSlide() {
-            var thumbnails = $(".thumbnail-container[data-project-id='" + currentProjectId + "'] .thumbnail");
-
-            currentImageIndex = (currentImageIndex - 1 + thumbnails.length) % thumbnails.length;
-            var imgSrc = thumbnails.eq(currentImageIndex).attr("src");
-            $("#project-content").attr("src", imgSrc);
-        }
-
-        function handleKeyPress(event) {
-            // Handle arrow key presses for navigation
-            switch (event.key) {
-                case 'ArrowLeft':
-                    previousSlide();
-                    break;
-                case 'ArrowRight':
-                    nextSlide();
-                    break;
-                case 'Escape':
-                    closeModal();
-                    break;
-                default:
-                    break;
+        function updateModalContent() {
+            const project = projects[currentProjectIndex];
+            const imgEl = document.getElementById('modal-image');
+            
+            // Set image
+            imgEl.src = project.images[currentImageIndex];
+            
+            // Set Text
+            document.getElementById('modal-title').innerText = project.title;
+            document.getElementById('modal-counter').innerText = `${currentImageIndex + 1} / ${project.images.length}`;
+            
+            // Links
+            document.getElementById('modal-github').href = project.github;
+            
+            const demoBtn = document.getElementById('modal-demo');
+            if (project.demo) {
+                demoBtn.href = project.demo;
+                demoBtn.classList.remove('hidden');
+                demoBtn.classList.add('inline-flex');
+            } else {
+                demoBtn.classList.add('hidden');
+                demoBtn.classList.remove('inline-flex');
             }
         }
+
+        function changeSlide(direction) {
+            const project = projects[currentProjectIndex];
+            currentImageIndex = (currentImageIndex + direction + project.images.length) % project.images.length;
+            updateModalContent();
+        }
+
+        function handleKeyModal(e) {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'Escape') closeModal();
+        }
+
+        // --- UTILS ---
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+
+
+        // Initialize
+        renderProjects();
+
     </script>
 </body>
-
 </html>
