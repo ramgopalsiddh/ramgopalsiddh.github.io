@@ -336,7 +336,7 @@
         <div class="relative w-full max-w-6xl flex flex-col items-center">
             
             <!-- Main Image Container -->
-            <div class="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center">
+            <div id="modal-image-container" class="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center">
                 <img id="modal-image" src="" alt="Project Preview" class="max-h-full max-w-full object-contain rounded-lg shadow-2xl border-4 border-white">
                 
                 <button onclick="changeSlide(-1)" class="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 w-14 h-14 flex items-center justify-center text-black hover:bg-white/10 rounded-full transition-all border border-transparent hover:border-black/20">
@@ -591,6 +591,44 @@
             if (e.key === 'ArrowLeft') changeSlide(-1);
             if (e.key === 'Escape') closeModal();
         }
+
+        // --- MODAL SLIDE/SWIPE LOGIC ---
+        const modalImageContainer = document.getElementById('modal-image-container');
+        let startX = 0;
+        let isMouseDown = false;
+
+        const handleSwipe = (endX) => {
+            const threshold = 50;
+            const diff = endX - startX;
+            if (Math.abs(diff) > threshold) {
+                changeSlide(diff > 0 ? -1 : 1);
+            }
+        };
+
+        // Pointer Events (work for both touch and mouse)
+        modalImageContainer.addEventListener('pointerdown', e => {
+            e.preventDefault(); // Prevent default browser actions
+            startX = e.screenX;
+            isMouseDown = true;
+            modalImageContainer.style.cursor = 'grabbing';
+        });
+
+        modalImageContainer.addEventListener('pointerup', e => {
+            if (isMouseDown) {
+                handleSwipe(e.screenX);
+            }
+            isMouseDown = false;
+            modalImageContainer.style.cursor = 'default';
+        });
+
+        modalImageContainer.addEventListener('pointerleave', () => {
+            isMouseDown = false;
+            modalImageContainer.style.cursor = 'default';
+        });
+
+        // Prevent image dragging
+        document.getElementById('modal-image').addEventListener('dragstart', e => e.preventDefault());
+
 
         // --- UTILS ---
 
