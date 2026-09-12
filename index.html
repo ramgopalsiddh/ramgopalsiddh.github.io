@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ram Gopal Siddh | Software Engineer</title>
     <meta name="description" content="Portfolio of Ram Gopal Siddh, a Software Engineer specializing in Python, React, React Native, Flask, Ruby on Rails and more.">
-    
+    <meta name="author" content="Ram Gopal Siddh">
+    <link rel="canonical" href="https://ramgopal.dev/">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <meta name="theme-color" content="#4338ca">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ramgopal.dev/">
+    <meta property="og:title" content="Ram Gopal Siddh | Software Engineer">
+    <meta property="og:description" content="Software Engineer specializing in Python, React, React Native, Flask, Ruby on Rails and scalable systems.">
+    <meta property="og:image" content="https://ramgopal.dev/profile.jpg">
+    <meta property="og:site_name" content="Ram Gopal Siddh Portfolio">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ramgopal.dev/">
+    <meta name="twitter:site" content="@ramgopalsiddh1">
+    <meta name="twitter:creator" content="@ramgopalsiddh1">
+    <meta name="twitter:title" content="Ram Gopal Siddh | Software Engineer">
+    <meta name="twitter:description" content="Software Engineer specializing in Python, React, React Native, Flask, Ruby on Rails and scalable systems.">
+    <meta name="twitter:image" content="https://ramgopal.dev/profile.jpg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -411,9 +436,15 @@
                     If you have a challenging project or a role that needs a dedicated developer, I'd love to hear from you.
                 </p>
                 
-                <a href="mailto:ramgopalsiddh.000@gmail.com" class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-10 py-4 md:py-5 bg-dark text-white text-base md:text-xl font-bold rounded-xl hover:bg-primary hover:shadow-glow transition-all transform hover:-translate-y-1 mb-8 md:mb-10 border-2 border-transparent w-full md:w-auto justify-center break-all md:break-normal">
-                    <i class="fa-solid fa-envelope"></i> ramgopalsiddh.000@gmail.com
-                </a>
+                <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 md:mb-10 w-full md:w-auto">
+                    <a href="mailto:ramgopalsiddh.000@gmail.com" class="inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-4 md:py-5 bg-dark text-white text-base md:text-xl font-bold rounded-xl hover:bg-primary hover:shadow-glow transition-all transform hover:-translate-y-0.5 border-2 border-transparent w-full sm:w-auto justify-center break-all sm:break-normal">
+                        <i class="fa-solid fa-envelope"></i> ramgopalsiddh.000@gmail.com
+                    </a>
+                    <button onclick="copyEmail(this)" class="inline-flex items-center gap-2 px-5 py-4 md:py-5 bg-white border-2 border-gray-300 text-dark hover:border-primary hover:text-primary rounded-xl font-bold transition-all transform hover:-translate-y-0.5 shadow-sm text-base md:text-lg w-full sm:w-auto justify-center group cursor-pointer" title="Copy email to clipboard">
+                        <i class="fa-regular fa-copy group-hover:scale-110 transition-transform text-xl"></i>
+                        <span>Copy Email</span>
+                    </button>
+                </div>
 
                 <div class="flex justify-center items-center flex-wrap gap-4 md:gap-6 mt-4">
                     <a href="https://www.linkedin.com/in/ramgopalsiddh/" target="_blank" class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white text-dark hover:bg-[#0077b5] hover:text-white transition-all text-2xl md:text-3xl border-2 border-gray-300 hover:border-[#0077b5] shadow-sm">
@@ -818,7 +849,61 @@
             });
         });
 
+        // Copy Email to Clipboard
+        function copyEmail(btn) {
+            const email = 'ramgopalsiddh.000@gmail.com';
+            const showSuccess = () => {
+                if (btn) {
+                    const originalContent = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check text-green-600 text-xl"></i> <span class="text-green-600 font-extrabold">Copied!</span>';
+                    btn.classList.add('border-green-500', 'bg-green-50');
+                    setTimeout(() => {
+                        btn.innerHTML = originalContent;
+                        btn.classList.remove('border-green-500', 'bg-green-50');
+                    }, 2500);
+                }
+                showToast('Email copied to clipboard: ' + email);
+            };
 
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(showSuccess).catch(() => fallbackCopy(email, showSuccess));
+            } else {
+                fallbackCopy(email, showSuccess);
+            }
+        }
+
+        function fallbackCopy(text, callback) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                callback();
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(message) {
+            let toast = document.getElementById('toast-notification');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'toast-notification';
+                toast.className = 'fixed bottom-6 right-6 z-50 bg-dark text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-bold border border-gray-700 transition-all duration-300 transform translate-y-16 opacity-0 pointer-events-none';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = '<i class="fa-solid fa-circle-check text-green-400 text-base"></i> ' + message;
+            toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => {
+                toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
 
         // Initialize
         renderProjects();
